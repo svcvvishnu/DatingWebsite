@@ -1,0 +1,93 @@
+<h3>Profile Search:</h3>
+<p align ="right"><a href="#/login" class="btn btn-primary">Logout</a></p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div  class="align-center" style="font-size:15px;">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="firstName" class="col-sm-2 control-label">
+                                    First Name: 
+                            </label>
+                            <label for="firstName" class="col-sm-2 control-label">
+                                    {{vm.profileUser.firstName}}
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="col-sm-2 control-label">
+                                    Last Name: 
+                            </label>
+                            <span></span>
+                            <label for="lastName" class="col-sm-2 control-label">
+                                    {{vm.profileUser.lastName}} 
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="userName" class="col-sm-2 control-label">
+                                    User Name: 
+                            </label>
+                            <label for="userName" class="col-sm-2 control-label">
+                                    {{vm.profileUser.username}} 
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="emaiId" class="col-sm-2 control-label">
+                                    Email Id: 
+                            </label>
+                            <label for="emailId" class="col-sm-2 control-label">
+                                    {{vm.profileUser.emailid}} 
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="age" class="col-sm-2 control-label">
+                                    Age: 
+                            </label>
+                            <label for="age" class="col-sm-2 control-label">
+                                    {{vm.profileUser.age}} 
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="sex" class="col-sm-2 control-label">
+                                    Sex: 
+                            </label>
+                            <label for="sex" class="col-sm-2 control-label">
+                                    {{vm.profileUser.sex}}
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="country" class="col-sm-2 control-label">
+                                    Country: 
+                            </label>
+                            <label for="country" class="col-sm-2 control-label">
+                                    {{vm.profileUser.country}} 
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">
+                                    Address: 
+                            </label>
+                            <label for="address" class="col-sm-2 control-label">
+                                    {{vm.profileUser.address}} 
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="form-actions">
+                                    <button type="submit" ng-show="!vm.isFriend && !vm.hasRequest && !vm.alreadyRequested" ng-click = "vm.sendRequest()" class="btn btn-primary">Send Request</button>
+                                    <button type="submit" ng-show="vm.hasRequest && !vm.isFriend" ng-click = "vm.acceptRequest()" class="btn btn-primary">Accept Request</button>
+                                    <button type="submit" ng-show="vm.hasRequest && !vm.isFriend" ng-click = "vm.rejectRequest()" class="btn btn-primary">Reject Request</button>
+                                    <button type="submit" ng-disabled="true"
+                                            ng-click = "vm.rejectRequest()" ng-show="vm.requestedSent" class="btn btn-primary">Request already Sent</button>
+                                    <a href="#/" class="btn btn-link">Back</a>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="Container">
+    <div class="col-md-4">
+        <h2>Search Profiles:</h2>  
+    </div>
+    <div class="col-md-4">
+          
+    </div>
+    <div class="col-md-4">
+        <div class="Container">
+            <a href="#/" class="btn btn-link">Back</a>
+            <a href="#/login" class="btn btn-primary">Logout</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" >
+            <table class="table table-striped">
+            <tr>
+                <td>First name:</td><td><input type="text" 
+                ng-model="search.firstName"  size="10" ></td>
+                <td>Last name:</td><td><input type="text" 
+                ng-model="search.lastName"  size="10" ></td>
+                <td>UserName:</td><td><input type="text" 
+                ng-model="search.username"  size="10" ></td>
+                <td>Age:</td><td><input  
+                ng-model="search.age"  size="2" ></td>
+            </tr>
+            <tr>
+                <td>Email :</td><td><input type="text" 
+                ng-model="search.emailid"  size="10" ></td>
+                <td>Country :</td><td><input type="text" 
+                ng-model="search.country"  size="10" ></td>
+                <td>Sex:</td><td><input type="text" 
+                ng-model="search.sex"  size="2" ></td>
+                <td>Address :</td><td><input type="text" 
+                ng-model="search.address"  size="10" ></td>
+            </tr>
+            </table>       
+            <div  style="height: 300px; overflow: auto; " >
+                <table class="table table-striped" >
+                    <thead><th width='10%'>Profile Username</th>
+                    <th width='10%'>First Name</th>
+                    <th width='10%'>Last Name</th>
+                    <th width='4%'>Age</th>
+                    <th width='4%'>Sex</th>
+                    <th width='10%'>Country</th>
+                    <th width='10%'>Address</th></thead>
+                    <tbody ng-repeat="user in vm.allUsers | filter:search:strict">
+                    <tr><td width = '10%'><a href="#/profileView/{{user.username}}">{{user.username}} </a></td>
+                        <td width = '10%'>{{user.firstName}}</td>
+                        <td width = '10%'>{{user.lastName}}</td>
+                        <td width = '4%'>{{user.age}}</td>
+                        <td width = '4%'>{{user.sex}}</td>
+                        <td width = '10%'>{{user.country}}</td>
+                        <td width = '10%'>{{user.address}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+     </div>
+</div>
